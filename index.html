@@ -6,17 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <form>  
-        <input type="text" name="username">
-        <button>Submit</button>
-    </form>
+    
     <script>
-        function saveToLocal(e){
-            e.preventDefalut();
+        let myobj = {
 
-            var name = e.target.username.value;
-            localStorage.setItem('name', name);
+            name: "Avijeet"
         }
+
+        let myobj_str = JSON.stringfy(myobj);
+
+        localStorage.setItem('myobj', myobj.str);
+
+        console.log(localStorage);
     </script>
 </body>
 </html>
