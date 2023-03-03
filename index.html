@@ -6,18 +6,30 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form name="form" id="form">  
+        <input type="text" name="username" id="text">
+        <button>Submit</button>
+    </form>
+    <ul id="list"></ul>
     <script>
-        let myobj = {
+        function saveToLocal(e){
+            e.preventDefalut();
 
-            name: "Avijeet"
+            var name = e.target.username.value;
+            
+            const obj = {
+                name
+            }
+
+            localStorage.setItem(Obj.name, JSON.stringify(obj));
+            showonscreen(obj);
         }
 
-        let myobj_str = JSON.stringfy(myobj);
-
-        localStorage.setItem('myobj', myobj.str);
-
-        console.log(localStorage);
+        function showonscreen(obj)
+        {
+            const parentele = document.getElementById('list');
+            parentele.innerHTML = obj.name;
+        }
     </script>
 </body>
 </html>
